@@ -95,6 +95,7 @@
     <Compile Include="BO\RegionUnpacker.cs" />
     <Compile Include="BO\Rotate.cs" />
     <Compile Include="BO\ThirdPartyPaths.cs" />
+    <Compile Include="OSUtils\WindowsUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AboutForm.cs">

@@ -71,6 +71,7 @@ namespace ASU.UI
 
         private void MainForm_Load(object sender, System.EventArgs e)
         {
+            AdminCheck();
             try
             {
                 this.SuppressThirdPartyWarningMessage = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["SuppressThirdPartyImageConverterWarningMessage"]);
@@ -102,6 +103,12 @@ namespace ASU.UI
             {
                 ForkandBeard.Logic.ExceptionHandler.HandleException(ex, "cat@forkandbeard.co.uk");
             }
+        }
+
+        private void AdminCheck ()
+        {
+            if(OSUtils.WindowsUtils.IsUserAdministrator())
+                MessageBox.Show("ASU is running as administrator. This will break Drag-n-Drop functionality.", "Warning");
         }
 
         private List<BO.ImageUnpacker> unpackers = new List<BO.ImageUnpacker>();
